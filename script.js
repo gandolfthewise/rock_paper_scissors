@@ -48,17 +48,12 @@ function playRound(humanChoice, computerChoice) {
 };
 
 
-function playGame() {
+function playGame(humanSelection) {
     for (let i=0; i<5; i++) {
-        const humanSelection = getHumanChoice();
         const computerSelection = getComputerChoice();
         let currentScore = playRound(humanSelection, computerSelection);
         console.log(currentScore);
-        if (currentScore=="win") {
-            humanScore += 1;
-        } else if (currentScore=="lose") {
-            computerScore += 1;
-        }
+        
     }
     if (humanScore > computerScore) {
         console.log("You Won")
@@ -68,5 +63,28 @@ function playGame() {
         console.log("Draw")
     }
 }
+var roundNumber = 1;
+let x = document.querySelectorAll(".selectionCards div");
+x.forEach(function(x) {
+    x.addEventListener("click", function(e) {
+        let x = document.querySelector(".roundNumber");
+        roundNumber += 1;
+        x.textContent = roundNumber;
+        let humanChoice = e.currentTarget.className;//roundNumber.toString();
+        const computerSelection = getComputerChoice();
+        let currentScore = playRound(humanChoice, computerSelection);
+        if (currentScore=="win") {
+            humanScore += 1;
+            let hs = document.querySelector(".humanScore div");
+            hs.textContent = humanScore;
+        } else if (currentScore=="lose") {
+            let cs = document.querySelector(".computerScore div")
+            computerScore += 1;
+            cs.textContent = computerScore;
+        }
+    });
+});
 
-playGame();
+
+// Add a card to overlay to say that you have won
+//Show a result for each round

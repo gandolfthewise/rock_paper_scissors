@@ -1,0 +1,63 @@
+.selectionCards {
+    display: flex;
+    box-sizing: border-box;
+    flex-wrap:wrap;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+}
+
+.selectionCards {
+    gap: 40px;
+    justify-content: center;
+}
+
+.tally {
+    display: flex;
+    gap:100px;
+    justify-content: center;
+}
+
+span {
+    color: hsl(0, 100%, 50%);
+    font-weight: bold;
+}
+
+.selectionCards div img {
+    width: 200px;
+    height: auto;  
+}
+
+.selectionCards div:hover {
+    border-width: 3px;
+    border-color: hsl(120, 40%, 80%);
+    border-style: solid;
+    border-radius: 16px;
+    box-sizing: border-box;
+    padding: 17px;
+}
+
+.selectionCards div {
+    box-sizing: border-box;
+    flex-basis: auto;
+    flex-grow: 0;
+    padding: 10px;
+    border-radius: 16px;
+}
+
+.currentHumanScore,
+.currentComputerScore {
+    font-size: 50px;
+    text-align: center;
+}
+
+.selectionCards div {
+    padding:20px
+}
+
+.result {
+    text-align: center;
+}
