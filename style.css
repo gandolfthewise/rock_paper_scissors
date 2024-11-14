@@ -42,8 +42,8 @@ span {
 
 .selectionCards div {
     box-sizing: border-box;
-    flex-basis: auto;
-    flex-grow: 0;
+    /*flex-basis: auto;*/
+    flex:0 2 auto;
     padding: 10px;
     border-radius: 16px;
 }

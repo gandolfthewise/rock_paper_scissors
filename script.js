@@ -73,14 +73,19 @@ x.forEach(function(x) {
         let humanChoice = e.currentTarget.className;//roundNumber.toString();
         const computerSelection = getComputerChoice();
         let currentScore = playRound(humanChoice, computerSelection);
+        let result = document.querySelector(".result");
         if (currentScore=="win") {
             humanScore += 1;
             let hs = document.querySelector(".humanScore div");
+            result.textContent = "You Won!";
             hs.textContent = humanScore;
         } else if (currentScore=="lose") {
             let cs = document.querySelector(".computerScore div")
             computerScore += 1;
             cs.textContent = computerScore;
+            result.textContent = "You Lost!";
+        } else {
+            result.textContent = "You Both Draw!"
         }
     });
 });
